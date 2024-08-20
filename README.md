@@ -1,7 +1,5 @@
 # PMH_Bio
 
-# mGLI-KDA
-
 <div align='center'>
  
 <!-- [![preprint](https://img.shields.io/static/v1?label=arXiv&message=2310.12508&color=B31B1B)](https://www.google.com/) -->
