@@ -15,15 +15,13 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Model Architecture](#model-architecture)
 - [Prerequisites](#prerequisites)
 - [Datasets](#datasets)
-- [Modeling with PMH-based features](#Modeling-with-PMH-based-features)
-    - [Generation of PMH-based features for protein-ligand complex](#I-Generation-of-PMH-based-features-for-protein-ligand-complex)
+- [Modeling with PMH-Based Features](#modeling-with-pmh-based-features)
+    - [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
 - [Results](#results)
-    - [Modeling the PDBbind datasets]()
 - [License](#license)
 - [Citation](#citation)
 
