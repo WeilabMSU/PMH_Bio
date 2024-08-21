@@ -81,7 +81,7 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 ---
 
 ## Generation of PMH-based features for protein-ligand complex
-l
+
 ```shell
 # example: generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are save in features/2p7z
 python codes/PMH.py
