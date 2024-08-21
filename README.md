@@ -19,8 +19,8 @@
 - [Model Architecture](#model-architecture)
 - [Prerequisites](#prerequisites)
 - [Datasets](#datasets)
-- [Modeling with PMH-Based Features](#modeling-with-pmh-based-features)
-- [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
+- [Modeling the PDBbind datasets](#Modeling the PDBbind datasets)
+    - [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
 - [Results](#results)
 - [License](#license)
 - [Citation](#citation)
@@ -78,7 +78,7 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 - Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features were paired with GBRT. The predictions can be found in the [results](./Results) folder. The transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All the predictions can be found in the [results](./Results) folder.
 ---
 
-## Generation of PMH-based features for protein-ligand complex
+### Generation of PMH-based features for protein-ligand complex
 
 ```shell
 # example: generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are save in features/2p7z
