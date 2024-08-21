@@ -82,6 +82,13 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 - Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features and transformer-based features were paired with GBRT, respectively. The consensus predictions were obtained using predictions from the two types of models. The predictions can be found in the [results](./Results) folder. 
 ---
 
+## Generation of mGLI-based features for protein-ligand complex
+
+```shell
+# example: generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are save in features/2p7z
+python codes/PMH.py
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
