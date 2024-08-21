@@ -34,7 +34,7 @@
 ## Introduction
 Artificial intelligence-assisted drug design is revolutionizing the pharmaceutical industry. Effective molecular features are crucial for accurate machine learning predictions, and advanced mathematics plays a key role in designing these features. Persistent homology theory, which equips topological invariants with persistence, provides valuable insights into molecular structures. The calculation of Betti numbers is based on differential that typically satisfy \(d^2 = 0\). Our recent work has extended this concept by employing Mayer homology with a generalized differential that satisfies \(d^N = 0\) for \(N \geq 2\), leading to the development of persistent Mayer homology (PMH) theory. This theory offers richer Betti number information across various scales. In this study, we utilize PMH to create a novel multiscale topological featurization approach for molecular representation. These PMH-based molecular features serve as valuable tools for descriptive and predictive analysis in molecular data and machine learning. By integrating these features with machine learning algorithms, we build highly accurate predictive models. Benchmark tests on established protein-ligand datasets, including PDBbind-2007, PDBbind-2013, and PDBbind-2016, demonstrate the superior performance of our models in predicting protein-ligand binding affinities.
 
-> **Keywords**: Knot data analysis, Gauss link integral, multiscale analysis.
+> **Keywords**: Persistent homology, Persistent Mayer homology, Protein-ligand binding affinity.
 
 ---
 
