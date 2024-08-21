@@ -86,3 +86,16 @@ Note: Twenty gradient boosting regressor tree (GBRT) models were built for each 
 ```shell
 # Example: Generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are saved in features/2p7z
 python codes/PMH.py
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Citation
+
+- Hongsong Feng, Li Shen, Jian Liu, and Guo-Wei Wei, "Persistent Mayer homology-based machine learning models for protein-ligand binding affinity prediction"
+
+---
