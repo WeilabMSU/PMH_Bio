@@ -20,9 +20,9 @@
 - [Model Architecture](#model-architecture)
 - [Prerequisites](#prerequisites)
 - [Datasets](#datasets)
-- [Modeling with mGLI-based features](#Modeling-with-mGLI-based-features)
-    - [Generation of mGLI-based features for protein-ligand complex](#II-Generation-of-mGLI-based-features-for-protein-ligand-complex)
-    - [Generation of sequence-based features for protein or small molecules](#IV-Generation-of-sequence-based-features-for-protein-or-small-molecules)
+- [Modeling with PMH-based features](#Modeling-with-PMH-based-features)
+    - [Generation of PMH-based features for protein-ligand complex](#II-Generation-of-PMH-based-features-for-protein-ligand-complex)
+    (#IV-Generation-of-sequence-based-features-for-protein-or-small-molecules)
 
 - [Results](#results)
     - [I. Modeling the PDBbind datasets]()
@@ -40,7 +40,7 @@ Artificial intelligence-assisted drug design is revolutionizing the pharmaceutic
 
 ## Model Architecture
 
-Schematic illustration of the overall mGLI-based knot data analysis (KDA) platform is shown in below.
+Schematic illustration of the overall PMH-based knot data analysis (KDA) platform is shown in below.
 
 ![Model Architecture](figures/PMH-concept.png)
 
@@ -82,7 +82,7 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 - Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features and transformer-based features were paired with GBRT, respectively. The consensus predictions were obtained using predictions from the two types of models. The predictions can be found in the [results](./Results) folder. 
 ---
 
-## Generation of mGLI-based features for protein-ligand complex
+## Generation of PMH-based features for protein-ligand complex
 
 ```shell
 # example: generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are save in features/2p7z
