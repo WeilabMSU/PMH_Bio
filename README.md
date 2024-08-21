@@ -73,9 +73,9 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 
 |Datasets                                        | Training Set                  | Test Set| PCC | RMSE (kcal/mol) |
 |-------------------------------------------------|-------------                  |---------|-    |-                |
-| PDBbind-v2007 [result](./Results)      |1300 |1105  | 0.824 |1.95|
-| PDBbind-v2013 [result](./Results)      |2959|2764  | 0.787 |2.036|
-| PDBbind-v2016 [result](./Results)      |4057|3767  | 0.834 |1.755|
+| PDBbind-v2007 [result](./Results)      |1105 |195  | 0.824 |1.95|
+| PDBbind-v2013 [result](./Results)      |2764 |195  | 0.787 |2.036|
+| PDBbind-v2016 [result](./Results)      |3767 |290  | 0.834 |1.755|
 
 - Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features were paired with GBRT, respectively. The predictions can be found in the [results](./Results) folder. The transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All the predictions can be found in the [results](./Results) folder.
 ---
