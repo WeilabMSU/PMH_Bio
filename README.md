@@ -7,7 +7,7 @@
 
 </div>
 
-**Title** - Persistent Mayer Homology-Based Machine Learning Models for Protein-Ligand Binding Affinity Prediction.
+**Title** - Persistent Mayer homology-based machine learning models for protein-ligand binding affinity prediction.
 
 **Authors** - Hongsong Feng, Li Shen, Jian Liu, and Guo-Wei Wei
 
@@ -15,21 +15,22 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Model Architecture](#model-architecture)
 - [Prerequisites](#prerequisites)
 - [Datasets](#datasets)
-- [Modeling with PMH-Based Features](#modeling-with-pmh-based-features)
-    - [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
+- [Modeling with PMH-based features](#Modeling-with-PMH-based-features)
+    - [Generation of PMH-based features for protein-ligand complex](#I-Generation-of-PMH-based-features-for-protein-ligand-complex)
 - [Results](#results)
+    - [Modeling the PDBbind datasets]()
 - [License](#license)
 - [Citation](#citation)
 
 ---
 
 ## Introduction
-
-Artificial intelligence-assisted drug design is revolutionizing the pharmaceutical industry. Effective molecular features are crucial for accurate machine learning predictions, and advanced mathematics plays a key role in designing these features. Persistent homology theory, which equips topological invariants with persistence, provides valuable insights into molecular structures. The calculation of Betti numbers is based on a differential that typically satisfies \(d^2 = 0\). Our recent work has extended this concept by employing Mayer homology with a generalized differential that satisfies \(d^N = 0\) for \(N \geq 2\), leading to the development of Persistent Mayer Homology (PMH) theory. This theory offers richer Betti number information across various scales. In this study, we utilize PMH to create a novel multiscale topological featurization approach for molecular representation. These PMH-based molecular features serve as valuable tools for descriptive and predictive analysis in molecular data and machine learning. By integrating these features with machine learning algorithms, we build highly accurate predictive models. Benchmark tests on established protein-ligand datasets, including PDBbind-2007, PDBbind-2013, and PDBbind-2016, demonstrate the superior performance of our models in predicting protein-ligand binding affinities.
+Artificial intelligence-assisted drug design is revolutionizing the pharmaceutical industry. Effective molecular features are crucial for accurate machine learning predictions, and advanced mathematics plays a key role in designing these features. Persistent homology theory, which equips topological invariants with persistence, provides valuable insights into molecular structures. The calculation of Betti numbers is based on differential that typically satisfy \(d^2 = 0\). Our recent work has extended this concept by employing Mayer homology with a generalized differential that satisfies \(d^N = 0\) for \(N \geq 2\), leading to the development of persistent Mayer homology (PMH) theory. This theory offers richer Betti number information across various scales. In this study, we utilize PMH to create a novel multiscale topological featurization approach for molecular representation. These PMH-based molecular features serve as valuable tools for descriptive and predictive analysis in molecular data and machine learning. By integrating these features with machine learning algorithms, we build highly accurate predictive models. Benchmark tests on established protein-ligand datasets, including PDBbind-2007, PDBbind-2013, and PDBbind-2016, demonstrate the superior performance of our models in predicting protein-ligand binding affinities.
 
 > **Keywords**: Persistent homology, Persistent Mayer homology, Protein-ligand binding affinity.
 
@@ -37,11 +38,11 @@ Artificial intelligence-assisted drug design is revolutionizing the pharmaceutic
 
 ## Model Architecture
 
-Schematic illustration of the overall PMH-based knot data analysis (KDA) platform is shown below.
+Schematic illustration of the overall PMH-based knot data analysis (KDA) platform is shown in below.
 
 ![Model Architecture](figures/PMH-concept.png)
 
-Further details are provided in the [paper](https://github.com/WeilabMSU/PMH_Bio), offering context and additional information about the architecture and its components.
+Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio), providing context and additional information about the architecture and its components.
 
 ---
 
@@ -55,38 +56,36 @@ Further details are provided in the [paper](https://github.com/WeilabMSU/PMH_Bio
 - Biopython                 1.75
 
 ---
-
 ## Datasets
 
-| Datasets                | Total | Training Set                 | Test Set                                             |
-|-------------------------|-------|------------------------------|------------------------------------------------------|
-| PDBbind-v2007           | 1300  | 1105 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) |
-| PDBbind-v2013           | 2959  | 2764 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) |
-| PDBbind-v2016           | 4057  | 3767 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) | 290 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip) |
+| Datasets                |Total    | Training Set                 | Test Set                                             |
+|-|-----------------------------|------------------------------|------------------------------                        |
+| PDBbind-v2007       |1300 |1105  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
+| PDBbind-v2013       |2959|2764  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
+| PDBbind-v2016       |4057|3767  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 290 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
 
-- **PDBbind Raw Data**: Protein-ligand complex structures. Download from the [PDBbind database](http://www.pdbbind.org.cn/).
-- **Label**: The .csv file containing the protein ID and corresponding binding affinity for PDBbind data.
 
+- PDBbind RawData: the protein-ligand complex structures. Download from [PDBbind database](http://www.pdbbind.org.cn/)
+- Label: the .csv file, which contains the protein ID and corresponding binding affinity for PDBbind data.
 ---
 
-## Modeling with PMH-Based Features
+## Modeling the PDBbind datasets
 
-| Datasets               | Training Set | Test Set | PCC  | RMSE (kcal/mol) |
-|------------------------|--------------|----------|------|------------------|
-| PDBbind-v2007 [result](./Results) | 1105         | 195      | 0.824 | 1.95 |
-| PDBbind-v2013 [result](./Results) | 2764         | 195      | 0.787 | 2.036|
-| PDBbind-v2016 [result](./Results) | 3767         | 290      | 0.834 | 1.755|
+|Datasets                                        | Training Set                  | Test Set| PCC | RMSE (kcal/mol) |
+|-------------------------------------------------|-------------                  |---------|-    |-                |
+| PDBbind-v2007 [result](./Results)      |1105 |195  | 0.824 |1.95|
+| PDBbind-v2013 [result](./Results)      |2764 |195  | 0.787 |2.036|
+| PDBbind-v2016 [result](./Results)      |3767 |290  | 0.834 |1.755|
 
-Note: Twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds to address initialization-related errors. The PMH-based features were paired with GBRT. The predictions can be found in the [Results](./Results) folder. Transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All predictions can be found in the [Results](./Results) folder.
-
+- Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features were paired with GBRT. The predictions can be found in the [results](./Results) folder. The transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All the predictions can be found in the [results](./Results) folder.
 ---
 
-## Generation of PMH-Based Features for Protein-Ligand Complex
+## Generation of PMH-based features for protein-ligand complex
 
 ```shell
-# Example: Generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are saved in features/2p7z
+# example: generating the PMH features for PDB 2p7z. The PDB file is located in PDB/2p7z folder and the generated features are save in features/2p7z
 python codes/PMH.py
-
+```
 
 ## License
 
