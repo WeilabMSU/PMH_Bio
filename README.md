@@ -20,7 +20,7 @@
 - [Prerequisites](#prerequisites)
 - [Datasets](#datasets)
 - [Modeling with PMH-Based Features](#modeling-with-pmh-based-features)
-    - [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
+- [Generation of PMH-Based Features for Protein-Ligand Complex](#generation-of-pmh-based-features-for-protein-ligand-complex)
 - [Results](#results)
 - [License](#license)
 - [Citation](#citation)
