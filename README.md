@@ -77,7 +77,7 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 |-------------------------------------------------|-------------                  |---------|-    |-                |
 | PDBbind-v2007 [result](./Results)      |1300 |1105  | 0.824 |1.95|
 | PDBbind-v2013 [result](./Results)      |2959|2764  | 0.787 |2.036|
-| PDBbind-v2016 [result](./Results)      |4057|3767  | 0.8534 |1.755|
+| PDBbind-v2016 [result](./Results)      |4057|3767  | 0.834 |1.755|
 
 - Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features and transformer-based features were paired with GBRT, respectively. The consensus predictions were obtained using predictions from the two types of models. The predictions can be found in the [results](./Results) folder. 
 ---
