@@ -42,9 +42,9 @@ Artificial intelligence-assisted drug design is revolutionizing the pharmaceutic
 
 Schematic illustration of the overall mGLI-based knot data analysis (KDA) platform is shown in below.
 
-![Model Architecture](PMH-concept.png)
+![Model Architecture](figures/PMH-concept.png)
 
-Further explain the details in the [paper](https://github.com/WeilabMSU/mGLI-KDA), providing context and additional information about the architecture and its components.
+Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio), providing context and additional information about the architecture and its components.
 
 ---
 
