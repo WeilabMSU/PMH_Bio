@@ -7,9 +7,9 @@
 
 </div>
 
-**Title** - Knot data analysis using multiscale Gauss link integral.
+**Title** - Persistent Mayer homology-based machine learning models for protein-ligand binding affinity prediction.
 
-**Authors** - Li Shen, Hongsong Feng, Fengling Li, Fengchun Lei, Jie Wu, and Guo-Wei Wei
+**Authors** - Hongsong Feng, Li Shen, Jian Liu, and Guo-Wei Wei
 
 ---
 
@@ -19,25 +19,20 @@
 - [Introduction](#introduction)
 - [Model Architecture](#model-architecture)
 - [Prerequisites](#prerequisites)
-- [Visualization tools](#Visualization-tools)
 - [Datasets](#datasets)
 - [Modeling with mGLI-based features](#Modeling-with-mGLI-based-features)
-    - [mGLI-based B-factor prediction](#i-mgli-based-b-factor-prediction)
     - [Generation of mGLI-based features for protein-ligand complex](#II-Generation-of-mGLI-based-features-for-protein-ligand-complex)
-    - [Generation of mGLI-based features for small molecule](#III-Generation-of-mGLI-based-features-for-small-molecule)
     - [Generation of sequence-based features for protein or small molecules](#IV-Generation-of-sequence-based-features-for-protein-or-small-molecules)
 
 - [Results](#results)
-    - [I. Modeling the B-factor datasets]()
-    - [II. Modeling the PDBbind datasets]()
+    - [I. Modeling the PDBbind datasets]()
 - [License](#license)
 - [Citation](#citation)
 
 ---
 
 ## Introduction
-
-In the past decade, topological data analysis (TDA) has emerged as a powerful algebraic topology approach in data science. The main technique used in TDA is persistent homology, which tracks topological invariants over the filtration of point cloud data. Although knot theory and related subjects are a focus of study in mathematics, their success in practical applications is quite limited due to the lack of localization and quantization. We address these challenges by introducing knot data analysis (KDA), a new paradigm that incorporates curve segmentation and multiscale analysis into the Gauss link integral.  The resulting multiscale Gauss link integral (mGLI) recovers the global topological properties of knots and links at an appropriate scale and offers a multiscale geometric topology approach to capture the local structures and connectivities in data. The proposed mGLI significantly outperforms other state-of-the-art methods across various benchmark problems in 14  intricately complex biological datasets, including protein flexibility analysis, protein-ligand interactions, hERG potassium channel blockade screening, and quantitative toxicity assessment. Our KDA opens a new research area in data science.
+Artificial intelligence-assisted drug design is revolutionizing the pharmaceutical industry. Effective molecular features are crucial for accurate machine learning predictions, and advanced mathematics plays a key role in designing these features. Persistent homology theory, which equips topological invariants with persistence, provides valuable insights into molecular structures. The calculation of Betti numbers is based on differential that typically satisfy \(d^2 = 0\). Our recent work has extended this concept by employing Mayer homology with a generalized differential that satisfies \(d^N = 0\) for \(N \geq 2\), leading to the development of persistent Mayer homology (PMH) theory. This theory offers richer Betti number information across various scales. In this study, we utilize PMH to create a novel multiscale topological featurization approach for molecular representation. These PMH-based molecular features serve as valuable tools for descriptive and predictive analysis in molecular data and machine learning. By integrating these features with machine learning algorithms, we build highly accurate predictive models. Benchmark tests on established protein-ligand datasets, including PDBbind-2007, PDBbind-2013, and PDBbind-2016, demonstrate the superior performance of our models in predicting protein-ligand binding affinities.
 
 > **Keywords**: Knot data analysis, Gauss link integral, multiscale analysis.
 
@@ -47,7 +42,7 @@ In the past decade, topological data analysis (TDA) has emerged as a powerful al
 
 Schematic illustration of the overall mGLI-based knot data analysis (KDA) platform is shown in below.
 
-![Model Architecture](concepts.png)
+![Model Architecture](PMH-concept.png)
 
 Further explain the details in the [paper](https://github.com/WeilabMSU/mGLI-KDA), providing context and additional information about the architecture and its components.
 
@@ -57,35 +52,18 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/mGLI-KDA
 
 - numpy                     1.21.0
 - scipy                     1.7.3
-- pytorch                   1.10.0 
-- pytorch-cuda              11.7
-- torchvision               0.11.1
 - scikit-learn              1.0.2
 - python                    3.10.12
 - biopandas                 0.4.1
 - Biopython                 1.75
 
 ---
-## Visualization tools
-
-- vispy 0.12.1
-
-- [pyknotid](https://github.com/SPOCKnots/pyknotid)
-
-- pymol
-
---- 
-
 ## Datasets
 
 A brief introduction about the benchmarks.
 
 | Datasets                |Total    | Training Set                 | Test Set                                             |
-|-|-----------------------------|------------------------------|------------------------------                        |
-| Bfactor-Set364 | 364  [Data](./datasets)     |   -    |      -                                                            |
-| Bfactor-small | 30     [Data](./datasets)  |   -    |      -                                                            |
-| Bfactor-medium | 36    [Data](./datasets)  |   -    |      -                                                            |
-| Bfactor-large | 34   [Data](./datasets)    |   -    |      -                                                            |
+|-|-----------------------------|------------------------------|------------------------------                        |-                                                            |
 | PDBbind-v2007       |1300 |1105  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
 | PDBbind-v2013       |2959|2764  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 195 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
 | PDBbind-v2016       |4057|3767  [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                        | 290 [Label](https://weilab.math.msu.edu/Downloads/mGLI-KDA/PDBbind.zip)                         |
@@ -97,49 +75,15 @@ A brief introduction about the benchmarks.
 - Data for hERG and toxicity datasets: molecular 3D structures, SMILES strings, and labels
 ---
 
-## Modeling with mGLI-based features
-### I. mGLI-based B-factor prediction
-
-### III. Generation of mGLI-based features for small molecule
-Example with the ligand in protein complex PDB 2eg8, generating mGLI features with "bin" manner and "median" statistics for atom-by-atom Gauss linking integral. Statistics of "all" can also be used.  output: 2eg8-ligand-median-bin.npy
-```shell
-python codes/mGLI-ligand.py --mol2_path datasets/PDBbind/2eg8/2eg8_ligand.mol2 --mol2_id 2eg8 --bin_or_all bin --integral_type median
-```
-### IV. Generation of sequence-based features for protein or small molecules
-Protein sequence embeddings were generated with [Transformer Protein language model](https://github.com/facebookresearch/esm).
-
-Small molecular sequence embeddings were generated with
-[Transformer small molecule language model](https://github.com/WeilabMSU/PretrainModels), and [Autoencoder small molecule language model](https://github.com/jrwnter/cddd)
-
----
-
-## Results
-
-### I. Modeling the Set-364 b-factor dataset
-| Models       | [GNM](https://dyn.life.nthu.edu.tw/oGNM/oGNM.php) [result](./Results)  | pfFRI [result](./Results)| ASPH | opFRI [result](./Results)| EH   | mGLI [result](./Results)|
-|--------------|-------|-------|------|-------|------|------|
-| PCC          | 0.565 | 0.626 | 0.65 | 0.673 | 0.698| 0.762|
-
-
 ### II. Modeling the PDBbind datasets
 
-#### 1. Modeling with \#{mGLI-all & mGLI-lig-all,TF} features
 |Datasets                                        | Training Set                  | Test Set| PCC | RMSE (kcal/mol) |
 |-------------------------------------------------|-------------                  |---------|-    |-                |
 | PDBbind-v2007 [result](./Results)      |1300 |1105  | **0.835** |1.888|
 | PDBbind-v2013 [result](./Results)      |2959|2764  | **0.819** |1.930|
 | PDBbind-v2016 [result](./Results)      |4057|3767  | 0.857 |1.673|
 
-#### 2. Modeling with \#{mGLI-bin & mGLI-lig-all,TF} features
-|Datasets                                        | Training Set                  | Test Set| PCC | RMSE (kcal/mol) |
-|-------------------------------------------------|-------------                  |---------|-    |-                |
-| PDBbind-v2007 [result](./Results)      |1300 |1105  | 0.831 |1.932|
-| PDBbind-v2013 [result](./Results)      |2959|2764  | **0.819** | 1.948|
-| PDBbind-v2016 [result](./Results)      |4057|3767  | **0.862** |1.671|
-
-
 Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The mGLI-based features and transformer-based features were paired with GBRT, respectively. The consensus predictions (\#{mGLI-all & mGLI-lig-all,TF} or \#{mGLI-bin & mGLI-lig-all,TF}) were obtained using predictions from the two types of models. The predictions can be found in the [results](./Results) folder. 
-
 ---
 
 ## License
@@ -150,6 +94,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Citation
 
-- Li Shen, Hongsong Feng, Fengling Li, Fengchun Lei, Jie Wu, and Guo-Wei Wei, "Knot data analysis using multiscale Gauss link integral"
+- Hongsong Feng, Li Shen, Jian Liu, and Guo-Wei Wei, "Persistent Mayer homology-based machine learning models for protein-ligand binding affinity prediction"
 
 ---
