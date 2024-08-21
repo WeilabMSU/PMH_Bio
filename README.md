@@ -23,7 +23,7 @@
 - [Modeling with PMH-based features](#Modeling-with-PMH-based-features)
     - [Generation of PMH-based features for protein-ligand complex](#II-Generation-of-PMH-based-features-for-protein-ligand-complex)
 - [Results](#results)
-    - [I. Modeling the PDBbind datasets]()
+    - [Modeling the PDBbind datasets]()
 - [License](#license)
 - [Citation](#citation)
 
