@@ -77,7 +77,7 @@ Further explain the details in the [paper](https://github.com/WeilabMSU/PMH_Bio)
 | PDBbind-v2013 [result](./Results)      |2764 |195  | 0.787 |2.036|
 | PDBbind-v2016 [result](./Results)      |3767 |290  | 0.834 |1.755|
 
-- Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features were paired with GBRT, respectively. The predictions can be found in the [results](./Results) folder. The transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All the predictions can be found in the [results](./Results) folder.
+- Note, twenty gradient boosting regressor tree (GBRT) models were built for each dataset with distinct random seeds such that initialization-related errors can be addressed. The PMH-based features were paired with GBRT. The predictions can be found in the [results](./Results) folder. The transformer-based sequence features were also generated and paired with GBRT to build machine learning models. All the predictions can be found in the [results](./Results) folder.
 ---
 
 ## Generation of PMH-based features for protein-ligand complex
